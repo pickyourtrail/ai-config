@@ -1,0 +1,29 @@
+{
+  "providers": {
+    "pyt-llm-factory": {
+      "api": "openai-completions",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiKey": "sk-or-v1-[KEY]",
+      "models": [
+        {
+          "id": "minimax/minimax-m2.7",
+          "name": "MiniMax M2.7"
+        },
+        {
+          "id": "moonshotai/kimi-k2.6",
+          "name": "Kimi K2.6"
+        },
+        {
+          "id": "x-ai/grok-4.3",
+          "name": "Grok 4.3"
+        },
+        {
+          "id": "z-ai/glm-5.1",
+          "name": "GLM 5.1"
+        }
+      ]
+    }
+  },
+  "defaultProvider": "pyt-llm-factory",
+  "defaultModel": "moonshotai/kimi-k2.6"
+}
