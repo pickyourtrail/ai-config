@@ -1,0 +1,85 @@
+// PickYourTrail — Kilo Code model config
+// Routed via OpenRouter. Update models here to change the team's defaults.
+// Docs: https://app.kilo.ai/docs/configuration
+{
+  "$schema": "https://app.kilo.ai/config.json",
+
+  "provider": {
+    "openrouter": {
+      "models": {
+
+        // Primary model — code generation, long context tasks
+        "minimax/minimax-m2.7": {
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "reasoning": true,
+          "supportsImages": true,
+          "supportsTools": true,
+          "supportsStreaming": true
+        },
+
+        // Fast model — debugging, quick Q&A, small edits
+        "moonshotai/kimi-k2.6": {
+          "contextWindow": 262144,
+          "maxOutputTokens": 32000,
+          "reasoning": true,
+          "supportsImages": true,
+          "supportsTools": true,
+          "supportsStreaming": true
+        },
+
+        // Spare / available for custom agent role assignments
+        "x-ai/grok-4.3": {
+          "contextWindow": 256000,
+          "maxOutputTokens": 32000,
+          "reasoning": true,
+          "supportsImages": true,
+          "supportsTools": true,
+          "supportsStreaming": true
+        },
+
+        // Orchestrator / planning — strong reasoning, cost-efficient
+        "z-ai/glm-5.1": {
+          "contextWindow": 128000,
+          "maxOutputTokens": 32000,
+          "reasoning": true,
+          "supportsImages": true,
+          "supportsTools": true,
+          "supportsStreaming": true
+        }
+
+      }
+    }
+  },
+
+  "permission": {
+    "bash": "allow",
+    "read": {
+      "*": "allow"
+    }
+  },
+
+  // Default model for general tasks and code generation
+  "model": "openrouter/minimax/minimax-m2.7",
+
+  // Fast/cheap model for lightweight tasks
+  "small_model": "openrouter/moonshotai/kimi-k2.6",
+
+  "agent": {
+    "plan": {
+      "model": "openrouter/z-ai/glm-5.1"
+    },
+    "debug": {
+      "model": "openrouter/moonshotai/kimi-k2.6"
+    },
+    "orchestrator": {
+      "model": "openrouter/z-ai/glm-5.1"
+    },
+    "ask": {
+      "model": "openrouter/minimax/minimax-m2.7"
+    },
+    "code": {
+      "model": "openrouter/moonshotai/kimi-k2.6"
+    }
+  }
+}
