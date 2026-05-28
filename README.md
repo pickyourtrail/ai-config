@@ -11,6 +11,20 @@ Paste this into your terminal. It creates the directories and pulls both configs
 curl -fsSL --create-dirs -o ~/.config/kilo/kilo.jsonc https://raw.githubusercontent.com/pickyourtrail/ai-config/main/kilo/kilo.jsonc && curl -fsSL --create-dirs -o ~/.pi/agent/models.json https://raw.githubusercontent.com/pickyourtrail/ai-config/main/pi/models.json && echo "✅ Kilo + Pi config installed"
 ```
 
+### Updating PI key
+
+```bash
+vi ~/.pi/agent/models.json 
+
+#update the apiKey and save it
+```
+
+### Updating Kilo key
+
+```bash
+Settings -> Providers -> OpenRouter -> [KEY] -> save
+```
+
 That's it. No npm, no install step.
 
 ---
