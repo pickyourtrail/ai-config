@@ -7,6 +7,9 @@ All models route via [OpenRouter](https://openrouter.ai).
 
 Paste this into your terminal. It creates the directories and pulls both configs in one shot:
 
+https://marketplace.visualstudio.com/items?itemName=kilocode.Kilo-Code
+https://pi.dev/docs/latest/packages
+
 ```bash
 curl -fsSL --create-dirs -o ~/.config/kilo/kilo.jsonc https://raw.githubusercontent.com/pickyourtrail/ai-config/main/kilo/kilo.jsonc && curl -fsSL --create-dirs -o ~/.pi/agent/models.json https://raw.githubusercontent.com/pickyourtrail/ai-config/main/pi/models.json && echo "✅ Kilo + Pi config installed"
 ```
